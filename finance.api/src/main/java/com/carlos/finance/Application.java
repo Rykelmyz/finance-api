@@ -1,4 +1,4 @@
-package com.carlos.finance.api;
+package com.carlos.finance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

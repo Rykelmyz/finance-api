@@ -1,0 +1,27 @@
+package com.carlos.finance.controller;
+
+import com.carlos.finance.dto.CreateUserRequest;
+import com.carlos.finance.dto.UserResponse;
+import com.carlos.finance.service.UserService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    private final UserService service;
+
+    public UserController(UserService service) {
+        this.service = service;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponse create(
+            @RequestBody @Valid CreateUserRequest request
+    ) {
+        return service.create(request);
+    }
+}
